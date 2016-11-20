@@ -13,11 +13,13 @@ import datetime
 
 
 #set startdate and enddate for trend data
-start = datetime.datetime(2016, 1, 1)
-end = datetime.datetime(2016, 1, 10)
+start = datetime.datetime(2009, 1, 1)
+end = datetime.datetime(2017, 1, 10)
 
 #assuming asx shares need to add .ax to share name web request
 morg_portfolio  = ['CBA.AX','MIN.AX']
+
+
 
 
 #return a pandas array for stats. Stats only exist at current time
@@ -29,7 +31,10 @@ morg_portfolio  = ['CBA.AX','MIN.AX']
 #option 'yahoo-actions' for action data
 #data returned  [Date	,Open	,High	,Low	Close	,Volume	,Adj Close]
 
-df = web.DataReader('CBA.AX', 'yahoo', start, end)
-print(df[['Open','High']][:4])
+#df = web.DataReader('CBA.AX', 'yahoo', start, end)
+#print(web.DataReader('CBA.AX', 'yahoo', start, end))
+print(web.DataReader('CBA.AX', 'yahoo', start, end))
+#print(web.DataReader('CBA.AX', 'yahoo-actions', start, end))
+#print(df[['Close']][:4])
 
 #print(web.DataReader(morg_portfolio, 'yahoo', start, end))
